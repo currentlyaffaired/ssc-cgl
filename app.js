@@ -1,3 +1,4 @@
+let currentIndex = 0;
 /* =========================
    FIREBASE CONFIG
 ========================= */
@@ -19,7 +20,6 @@ let bookmarks = JSON.parse(localStorage.getItem("bookmarks")) || [];
 let searchHistory = JSON.parse(localStorage.getItem("searchHistory")) || [];
 
 const subjects = ["biology", "chemistry", "physics", "computers"];
-let currentIndex = 0;
 
 /* =========================
    CLOUD SYNC
