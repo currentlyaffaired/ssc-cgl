@@ -153,14 +153,32 @@ body {
 /* =========================
    BODY EXPAND
 ========================= */
+/* collapsed */
 .chapter-body {
   max-height: 0;
   overflow: hidden;
-  transition: 0.5s;
+  transition: max-height 0.5s ease;
 }
 
+/* open → auto height via large safe value */
 .chapter.open .chapter-body {
-  max-height: 2000px;
+  max-height: 10000px;
+}
+
+/* =========================
+   CH ARROW
+========================= */
+/* rotate the container instead of svg */
+.ch-arrow {
+  transition: transform 0.35s cubic-bezier(.34,1.56,.64,1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* rotate when open */
+.chapter.open .ch-arrow {
+  transform: rotate(90deg);
 }
 
 /* =========================

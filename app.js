@@ -142,13 +142,17 @@ function initChapters() {
     header.addEventListener("click", function () {
       const chapter = this.parentElement;
 
-      chapter.classList.toggle("open");
+      const isOpen = chapter.classList.contains("open");
 
+      // close all
       document.querySelectorAll(".chapter").forEach(ch => {
-        ch.classList.remove("active");
+        ch.classList.remove("open", "active");
       });
 
-      chapter.classList.add("active");
+      // open only if it wasn't already open
+      if (!isOpen) {
+        chapter.classList.add("open", "active");
+      }
     });
   });
 }
